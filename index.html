@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Stock App</title>
+	<meta charset="UTF-8">
+	<meta name="title" content="Stock/Share Market Investing - Live Stock Update, India Stock Market Recommendations and Tips">
+	<meta name="description" content="Live Stock app is India's leading financial information source. Manage your finance with our online Investment Portfolio, Live Stock Price, Stock Trading news, Live CNBC TV18, Share Market, Views and Analysis on Equity and Stock Markets Tips, sensex, nifty, Commodity Market, personal finance, mutual funds, insurance, bank and loans.">
+	<meta name="keywords" content="Live Stock Markets, Commodity Market, Live Stock Price, finance, fund manager, share, stock exchange, stock market, trading, stock market rates, stock share value, markets stocks, broker, live market map, market analysis, market statistics, analyst Views">
+	<meta name="author" content="Chinmay Dalvi">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="stock-app">
+	  <div class="container">
+	  	<div class="row">
+	  		<div class="col-md-offset-2 col-md-8">
+	  			<br/>
+			  	<h1 class="page-heading">Stock Market</h1>
+			  	<template v-if="stocksLoaded">
+				  	<div class="stock-table">
+				  		<div class="stock-table-heading">
+				  			<div class="row">
+				  				<div class="col-xs-3 col-sm-4">Ticker</div>
+				  				<div class="col-xs-3 col-sm-4"> Price </div>
+				  				<div class="col-xs-6 col-sm-4">Last Update</div>
+				  			</div>
+				  		</div>
+					  	<div v-for="({price, last_update, status}, name) in stocks_dict"
+					  			 class="stock-item" style="text-align: center;">
+						  	<div class="row">
+							  		<div class="col-xs-3 col-sm-4">
+							  			<div class="stock-name">{{name|capitalize}}</div>
+							  		</div>
+							  		<div class="col-xs-3 col-sm-4 stock-price"
+							  				 :class="status">{{price|roundoff}}</div>
+							  		<div class="col-xs-6 col-sm-4">{{ getLastUpdateTime(last_update) }}</div>
+						  	</div>
+					  	</div>
+					  </div>
+					</template>
+					<template v-else>
+						<div class="loading-message">
+							<div class="row">
+								<div class="col-xs-12 col-md-offset-2 col-md-8">
+									<div>Loading ...</div>
+								</div>
+							</div>
+						</div>
+					</template>
+			  </div>
+		  </div>
+	  </div>
+	</div>
+  <script type="text/javascript" src="moment.js"></script>
+  <script type="text/javascript" src="vue.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>

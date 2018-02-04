@@ -1,0 +1,69 @@
+body{
+	background: url(stocks.jpg);
+}
+
+#stock-app{
+	text-align: center;
+}
+
+#stock-app .stock-table div[class^="col-"]{
+	 padding: 10px;
+}
+
+#stock-app .stock-table .stock-item, #stock-app .stock-table .stock-heading{
+	border: 1px solid grey;
+  margin-bottom: 10px;
+  background: cornsilk;
+}
+
+#stock-app .page-heading{
+	text-align: center;
+	color: white;
+	font-weight: bold;
+}
+
+#stock-app .stock-table .stock-table-heading{
+	background: cyan;
+  font-weight: bold;
+  color: brown;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#stock-app .loading-message{
+	height: 100px;
+  text-align: center;
+  font-size: 35px;
+  border-radius: 12px;
+  background: brown;
+  color: white;
+  font-weight: bold;
+  vertical-align: middle;
+  line-height: 100px;
+}
+
+.stock-table .stock-name{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#stock-app .stock-table .stock-price{
+	font-size: 19px;
+	font-weight: bold;
+}
+
+#stock-app .stock-table .stock-price.stock-missing{
+	background: green;
+	color: white;
+}
+
+#stock-app .stock-table .stock-price.price-decreased{
+	background: red;
+	color: white;
+}
+
+#stock-app .stock-table .stock-price.first-update{
+	background: white;
+	color: black;
+	border: 1px solid black;
+}
