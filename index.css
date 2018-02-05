@@ -2,8 +2,17 @@ body{
 	background: url(stocks.jpg);
 }
 
+
+
 #stock-app{
 	text-align: center;
+}
+
+.warning-message{
+  color: white;
+  font-size: 20px;
+  background: black;
+  margin-top: 10px;
 }
 
 #stock-app .stock-table div[class^="col-"]{
